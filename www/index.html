@@ -1,0 +1,63 @@
+<head>
+<title>Lists | Shopping</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+<link rel="stylesheet" href="css/main.css"/>
+<link rel="stylesheet" href="css/header.css"/>
+<link rel="stylesheet" href="css/mobile.css"/>
+<link rel="stylesheet" href="css/popup.css"/>
+<script src="/js/ajax.js"></script>
+<script src="/js/touch.js"></script>
+<script src="/js/controller.js"></script>
+<script id="mobile.js">
+addEventListener('DOMContentLoaded', function (){
+	if(navigator.standalone) document.body.classList.add('mobile');
+});
+</script>
+</head>
+
+<screen>
+	<header id="screen-header">
+		<!-- <div class="status"></div> -->
+		<span class="head-icon left" id="menu-button" onclick="nav.open()"></span>
+		<label id="screen-title">Shopping</label>
+	</header>
+	<main id="screen-main" class="touchscroll">
+		
+	</main>
+</screen>
+<div id="add-button" data-add-action="" 
+	onclick="pop.open(this.getAttribute('data-add-action'))"></div>
+
+<div id="sidebar-overlay" onclick="nav.close()"></div>
+<sidebar id="menu-sidebar">
+	<div class="sidebar-header">
+		<span class="sidebar-title">Menu</span>
+	</div>
+	<div class="sidebar-content touchscroll">
+		<div class="sidebar-content-item" onclick="nav.items()">Inventory</div>
+		<div class="sidebar-content-label border" onclick="nav.lists()">Lists</div>
+		<div class="sidebar-content-list" id="api-lists">
+			
+		</div>
+	</div>
+	<div class="sidebar-content-footer">
+		<div class="sidebar-content-item" onclick="location.reload()">Refresh</div>
+		<div class="sidebar-content-item" onclick="nav.settings()">Settings</div>
+		<div class="sidebar-content-item" onclick="nav.logout()">Logout</div>
+	</div>
+</sidebar>
+
+<div id="popup-overlay" onclick="pop.close()"></div>
+<popup id="input-popup">
+	<span class="popup-title" id="input-popup-title">Popup Title</span>
+	<div class="popup-content">
+		<!-- <span class="popup-text">hello im popup content</span> -->
+		<!-- <span class="popup-text-center">hello im popup content</span> -->
+		<input type="text" id="input-popup-field"/>
+	</div>
+	<div class="popup-button" onclick="pop.close()">Cancel</div>
+	<div class="popup-button" data-button-action="" id="popup-action-button" 
+		onclick="pop.act(this.getAttribute('data-button-action'))">Add</div>
+</popup>

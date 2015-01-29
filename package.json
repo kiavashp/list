@@ -1,0 +1,6 @@
+{
+	"name": "list",
+	"dependencies": {
+		"mongodb": "^1.4.7"
+	}
+}

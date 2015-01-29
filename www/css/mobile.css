@@ -1,0 +1,7 @@
+/* MOBILE */
+body.mobile header{
+padding-top:20px;
+}
+body.mobile #screen-main{
+padding-top:79px;
+}
