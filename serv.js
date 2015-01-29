@@ -47,7 +47,7 @@ serv = http.createServer(function (req, res){
 			
 			if(auth && req.uri.pathname.slice(0,4) === '/api'){
 				c.api(req, res, function (e, data){
-					res.setHeader('Content-Type': 'application/json');
+					res.setHeader('Content-Type', 'application/json');
 					if(e){
 						res.statusCode = 500;
 						res.end('{"err":500}');
